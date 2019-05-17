@@ -1,0 +1,16 @@
+language: rust
+branches: 
+  only:
+  - master
+
+cache: cargo
+
+matrix:
+  fast_finish: false
+  include:
+  - rust: nightly
+
+script:
+  - cargo check
+  - cargo build --verbose --all
+  - cargo test --verbose --all
